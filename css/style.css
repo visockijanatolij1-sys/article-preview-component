@@ -181,6 +181,31 @@ body {
     flex: none;
     height: 220px;
   }
+  .artilce-preview-left {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 10px;
+  }
+  .artilce-preview-block.active {
+    background-color: hsl(217, 19%, 35%);
+    margin: 0 -40px -32px;
+    padding: 18px 40px;
+  }
+  .artilce-preview-block.active .article-preview-info {
+    display: none;
+  }
+  .artilce-preview-block.active .share-popup {
+    position: static;
+    transform: none;
+    width: auto;
+    height: auto;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .artilce-preview-block.active .share-popup::after {
+    display: none;
+  }
 }
 @media (max-width: 424.98px) {
   .artilce-preview-right {
