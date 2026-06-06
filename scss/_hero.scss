@@ -24,11 +24,14 @@
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 10px 10px 10px #3333331a;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 .artilce-preview-left{
     flex: 0 0 40%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow: hidden;
 }
 .artilce-preview-left img{
     width: 100%;
@@ -57,6 +60,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+
 }
 .article-preview-info{
     display: flex;
@@ -98,7 +103,58 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    overflow: hidden;
+    transition: all 0.3s ease 0s;
+    position: relative;
+
+}
+
+.share-button{
+    cursor: pointer;
+}
+
+.share-popup{
+    display: none;
+}
+
+.share-popup.active{
+    width: 200px;
+    height: 50px;
+    background-color: variables.$veryDarkGrayishBlue;
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    bottom: 60px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease 0s;
+}
+
+.share-popup.active::after{
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+
+    width: 0;
+    height: 0;
+
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid variables.$veryDarkGrayishBlue;
+
+    transition: all 3s ease 0s;
+
+}
+
+.share-text{
+    color: variables.$lightGrayishBlue;
+    letter-spacing: 1px;
 }
 
 @media (max-width: 767.98px) {
